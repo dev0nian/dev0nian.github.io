@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-22 Wed 00:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs notes</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="devn" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org62b7a7b">1. Emacs</a>
+<ul>
+<li><a href="#orgb748d1b">1.1. General info</a></li>
+<li><a href="#orgf33394b">1.2. Random tidbits of info</a></li>
+<li><a href="#org6d5fba2">1.3. Regex</a></li>
+<li><a href="#orgb61c191">1.4. Dired</a></li>
+<li><a href="#org103c217">1.5. Exec path</a></li>
+</ul>
+</li>
+<li><a href="#org1a38096">2. Spacemacs:</a>
+<ul>
+<li><a href="#orgf5a18a8">2.1. Some interesting toggles and settings:</a></li>
+<li><a href="#org1b1e877">2.2. Help:</a></li>
+<li><a href="#org1f8b598">2.3. File operations:</a></li>
+<li><a href="#org20a42c9">2.4. Selection:</a></li>
+<li><a href="#org25ed702">2.5. Indentation:</a></li>
+<li><a href="#org753c138">2.6. Layouts and workspaces</a></li>
+<li><a href="#orge7cdfae">2.7. Projects</a></li>
+<li><a href="#orgfd23821">2.8. Changing escape key</a></li>
+<li><a href="#orgdb6a2d7">2.9. Some interesting packages found pre-installed in Spacemacs</a></li>
+<li><a href="#org4aeeb4a">2.10. Folding</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org62b7a7b" class="outline-2">
+<h2 id="org62b7a7b"><span class="section-number-2">1</span> Emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb748d1b" class="outline-3">
+<h3 id="orgb748d1b"><span class="section-number-3">1.1</span> General info</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Emacs is an extensible text editor. Most of emacs is written in elisp which also happens to be its scripting language, which means that it's far more extensible than most other editors.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf33394b" class="outline-3">
+<h3 id="orgf33394b"><span class="section-number-3">1.2</span> Random tidbits of info</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Key chords or key maps work differently in emacs. They're all bound to an elisp function. So you would bind a new key map to a function mostly, rather than key strokes (like is sometimes done in vim) Macros have the facility to stop during execution for user input.<br />
+There's something called Outline mode, seems to be mostly useful for specifying headings in long documents and folding content. Org mode seems more powerful.<br />
+Text, especially tabular text can be edited using "rectangular regions" which work by placing marks. Seems more powerful than just vim's visual block selection.<br />
+There's picture-mode and artist-mode which can be used to make simple ascii drawings.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d5fba2" class="outline-3">
+<h3 id="org6d5fba2"><span class="section-number-3">1.3</span> Regex</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Regex in emacs is different from that in Vim, which itself is slightly different from something like in Javascript or Perl, because why not? All parentheses require escaping, so does the "|" (or) character.<br />
+From the cursory search I did on the web, there seem to be ways to convert Emacs-regex into PCRE (Perl Compatible Regular Expression), but I'm not sure if that'll work for all the places where regex can be used. There's also a <code>regexp-builder</code> and a <code>re-builder</code>; functions that help building a elisp compatible regular expression, but I haven't really tried it yet. For more complicated regular expressions, it's probably best to just do that in vim. This page contains more info on emacs regex: <a href="http://ergoemacs.org/emacs/emacs_regex.html">http://ergoemacs.org/emacs/emacs_regex.html</a><br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-left">PCRE</th>
+<th scope="col" class="org-left">elisp</th>
+<th scope="col" class="org-left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Capture</td>
+<td class="org-left">(…)</td>
+<td class="org-left"><code>\(…\)</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">digit</td>
+<td class="org-left">\d</td>
+<td class="org-left"><code>[[:digit:]]</code></td>
+<td class="org-left">consider using [0-9] instead</td>
+</tr>
+
+<tr>
+<td class="org-left">word</td>
+<td class="org-left">\w</td>
+<td class="org-left"><code>[[:word:]]</code></td>
+<td class="org-left">consider using [A-Za-z] instead</td>
+</tr>
+
+<tr>
+<td class="org-left">whitespace</td>
+<td class="org-left">\s</td>
+<td class="org-left"><code>[[:space:]]</code></td>
+<td class="org-left">consider using " " instead</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb61c191" class="outline-3">
+<h3 id="orgb61c191"><span class="section-number-3">1.4</span> Dired</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Dired (Directory Editor) is the equivalent of vim's netrw. Regular keys like <code>hjkl</code> and <code>/</code> work for navigation and searching, but other keys might be different from vim<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-left">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Create dir</td>
+<td class="org-left">+</td>
+</tr>
+
+<tr>
+<td class="org-left">Parent dir</td>
+<td class="org-left">^</td>
+</tr>
+
+<tr>
+<td class="org-left">Mark for delete</td>
+<td class="org-left">d</td>
+</tr>
+
+<tr>
+<td class="org-left">Commit operation on marked files</td>
+<td class="org-left">x</td>
+</tr>
+
+<tr>
+<td class="org-left">Rename</td>
+<td class="org-left">R</td>
+</tr>
+
+<tr>
+<td class="org-left">Reduce/increase details</td>
+<td class="org-left">( and )</td>
+</tr>
+
+<tr>
+<td class="org-left">Mark file/dir</td>
+<td class="org-left">m</td>
+</tr>
+
+<tr>
+<td class="org-left">Unmark file/dir</td>
+<td class="org-left">u</td>
+</tr>
+
+<tr>
+<td class="org-left">Unmark all</td>
+<td class="org-left">U</td>
+</tr>
+
+<tr>
+<td class="org-left">Invert selection</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">Copy</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-left">Rename/move</td>
+<td class="org-left">e</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Tip: Open dired in 2 split windows and a lot of the file operations become more intuitive.<br />
+Update: I'm now using <code>treemacs</code> which comes with Spacemacs v300, and installed <code>vinegar</code> layer, which simplifies file navigation quite a bit, and provide netrw type key bindings.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org103c217" class="outline-3">
+<h3 id="org103c217"><span class="section-number-3">1.5</span> Exec path</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+The value of the environment variable $PATH is used by emacs when running programs in a shell (not eshell), but <code>exec-path</code> is used by emacs itself to find programs it needs for features to work. To add paths: <code>(setq exec-path (append exec-path '("/path/to/program")))</code>.<br />
+If adding to <code>exec-path</code> doesn't work, you can also try modifying the <code>eshell-path-env</code> variable, or move a symlink to one of the folders currently in <code>eshell-path-env</code>. You can find its current value by running <code>C-h v eshell-path-env[RET]</code>. <code>C-h v</code> runs the <code>describe-variable</code> function.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a38096" class="outline-2">
+<h2 id="org1a38096"><span class="section-number-2">2</span> Spacemacs:</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgf5a18a8" class="outline-3">
+<h3 id="orgf5a18a8"><span class="section-number-3">2.1</span> Some interesting toggles and settings:</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+SPC T F -&gt; Toggle fullscreen<br />
+SPC t g -&gt; Toggle 'golden ratio' for easy resizing of windows<br />
+SPC f t -&gt; Neo Tree (or treemacs depending on spacemacs version)<br />
+SPC n r -&gt; Only display selected region in the buffer (useful when refactoring variables)<br />
+SPC n w -&gt; Display all contents in the buffer<br />
+SPC t l -&gt; Toggle truncate lines (line wrapping)<br />
+SPC t L -&gt; Visual line navigation. Esp useful when line wrap is enabled<br />
+SPC t w -&gt; Toggle whitespace<br />
+SPC t I -&gt; Toggle aggressive indentation (indents while typing)<br />
+z a -&gt; Toggle folds<br />
+</p>
+
+<p>
+The toggles above are usually bound to elisp functions. If you need some of them to be on/off by default, check the function those toggles call using "SPC ?", then add to dotspacemacs/user-config<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1b1e877" class="outline-3">
+<h3 id="org1b1e877"><span class="section-number-3">2.2</span> Help:</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+SPC ? -&gt; Search for specific key bindings. Ex: "SPC\ b" lists all buffer related bindings<br />
+SPC &lt;f1&gt; -&gt; Apropos help (fuzzy search help section topics)<br />
+SPC h l -&gt; Search for help about a particular layer. Very useful to understand platform-specific considerations, key bindings and installed packages.<br />
+SPC h p -&gt; Search for help about a particular package.<br />
+SPC h d v -&gt; Describe variable<br />
+SPC h d k -&gt; Describe key binding<br />
+SPC h d f -&gt; &gt;Describe function<br />
+</p>
+
+<p>
+Emacs help section can be different from spacemacs help section. For ex, there is no concept of layers in emacs, and <code>SPC h p</code> takes you to the code where a package is initialized. To access emacs' help, type <code>C-h</code>. There are many <code>describe</code> functions that can be very useful in understanding your emacs setup. For ex, <code>describe-package</code> is useful to understand dependencies of various packages. Try it out by typing <code>C-h P</code> and entering a package name. Another useful functions is <code>describe-mode</code> which gives a bunch of information about the current buffer's major mode and available minor modes.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f8b598" class="outline-3">
+<h3 id="org1f8b598"><span class="section-number-3">2.3</span> File operations:</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+SPC f b -&gt; File bookmarks<br />
+SPC f o -&gt; Open file in an external app. Useful for opening an html file in the browser.<br />
+SPC E b b -&gt; <code>ediff-buffers</code> Start diff between open buffers<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20a42c9" class="outline-3">
+<h3 id="org20a42c9"><span class="section-number-3">2.4</span> Selection:</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+SPC v -&gt; start region selection. Then use v and V to expand or contract by one semantic unit<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25ed702" class="outline-3">
+<h3 id="org25ed702"><span class="section-number-3">2.5</span> Indentation:</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Indentation levels seem to be controlled by different variables depending on the major mode one is in.<br />
+For ex: In js mode, js-indent-level variable controls the indentation<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #8c8c8c;">(</span><span style="color: #8197bf;">defun</span> <span style="color: #fad07a;">my-setup-indent</span> <span style="color: #93a8c6;">(</span>n<span style="color: #93a8c6;">)</span>
+  <span style="color: #888888; font-style: italic;">;; </span><span style="color: #888888; font-style: italic;">java/c/c++</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> c-basic-offset n<span style="color: #93a8c6;">)</span>
+  <span style="color: #888888; font-style: italic;">;; </span><span style="color: #888888; font-style: italic;">web development</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> coffee-tab-width n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">coffeescript</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> javascript-indent-level n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">javascript-mode</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> js-indent-level n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">js-mode</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> js2-basic-offset n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">js2-mode, in latest js2-mode, it's alias of js-indent-level</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> web-mode-markup-indent-offset n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">web-mode, html tag in html file</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> web-mode-css-indent-offset n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">web-mode, css in html file</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> web-mode-code-indent-offset n<span style="color: #93a8c6;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">web-mode, js code in html file</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> css-indent-offset n<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span> <span style="color: #888888; font-style: italic;">; </span><span style="color: #888888; font-style: italic;">css-mode</span>
+<span style="color: #8c8c8c;">(</span>my-setup-indent <span style="color: #447799;">2</span><span style="color: #8c8c8c;">)</span> <span style="color: #888888; font-style: italic;">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org753c138" class="outline-3">
+<h3 id="org753c138"><span class="section-number-3">2.6</span> Layouts and workspaces</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Workspaces are similar to vim's tabs, and they can even be navigated using gt and gT. Layouts are more like a collection of windows, and can be used to provide buffer isolation, meaning buffers created under one Layout aren't available in other Layouts. Workspaces created under a Layout all share the same buffer list. A good way to use Layouts is to have one Layout per project.<br />
+To open a project in a new Layout, use "SPC p l", then use "SPC l 0..9" to switch to a particular Layout.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge7cdfae" class="outline-3">
+<h3 id="orge7cdfae"><span class="section-number-3">2.7</span> Projects</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Spacemacs uses projectile package to manage projects. Projectile's functions are accessed through "SPC p". <code>projectile-discover-projects-in-directory</code> is a useful command to discover all projects within a directory.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd23821" class="outline-3">
+<h3 id="orgfd23821"><span class="section-number-3">2.8</span> Changing escape key</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+<code>(setq-default evil-escape-key-sequence "jk")</code> Use <code>(kbd "")</code> function if you want to use Control/Meta/Shift keys.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb6a2d7" class="outline-3">
+<h3 id="orgdb6a2d7"><span class="section-number-3">2.9</span> Some interesting packages found pre-installed in Spacemacs</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li>Dumb jump: jump to definition capability provided only using search (no tags/external parser)<br /></li>
+<li>devdocs: Open quick documentation for the thing under point in <a href="http://devdocs.io">http://devdocs.io</a><br /></li>
+<li>helm-swoop: Open matches in a new buffer, have to try it out to understand<br /></li>
+<li>auto-yasnippet: Easily create disposable snippet for the buffer<br /></li>
+<li>aggressive-indent: Indent while typing<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4aeeb4a" class="outline-3">
+<h3 id="org4aeeb4a"><span class="section-number-3">2.10</span> Folding</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+<code>SPC z .</code> Opens a transient state that can be useful for easily closing/opening folds. Vim's basic fold toggle command <code>za</code> works as well. In the transient state you may notice that there's no command to recursively close all folds, which is unfortunate, but <code>hs-hide-level</code> function compensates for it quite well.<br />
+One very useful command is <code>hs-hide-level</code> which when called when the cursor is within a potential fold, closes all potential sub folds. This is especially useful when you want to get an overview of a class' methods. Just go to the first line after the class definition and call the above mentioned function.<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: devn</p>
+<p class="date">Created: 2020-01-22 Wed 00:08</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

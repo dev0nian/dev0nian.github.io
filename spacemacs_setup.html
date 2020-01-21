@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-22 Wed 00:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spacemacs setup</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="devn" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Spacemacs setup</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1c0a4b6">1. Spacemacs installation</a>
+<ul>
+<li><a href="#org4099588">1.1. Ubuntu/Elementary OS setup</a></li>
+</ul>
+</li>
+<li><a href="#org95fd19a">2. Spacemacs configuration</a></li>
+<li><a href="#org423df11">3. Spacemacs themes</a></li>
+<li><a href="#org6eaf73c">4. LSP setup</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1c0a4b6" class="outline-2">
+<h2 id="org1c0a4b6"><span class="section-number-2">1</span> Spacemacs installation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Install emacs on your platform (<code>apt</code> on Ubuntu or the distro's app store, <code>brew</code> on MacOS (update: better to install from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a> since you'll get proper GUI support), download .exe from <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a> for Windows). Install 32-bit version (at least if you are on Windows) as that seems to have better performance compared to the 64-bit version. I downloaded <code>emacs-26.3-i686.zip</code> for my Windows machine
+</p>
+
+<p>
+Run the following commands:
+</p>
+
+<pre class="example">
+rm -r ~/.emacs.d (make backup if you already have this folder)
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+</pre>
+
+<p>
+At the time of writing (Dec 2019), the released version of spacemacs is 0.200. Performance of this version seems a bit lacking. Start up time feels too long, files are slow to load sometimes, and cursor movement is also slow at times. Switching to <code>develop</code> branch seems to improve performance by quite a margin, and also enable the latest features. Of course, you run the risk of some stuff being broken, but it's been worth it for the performance gains, and I haven't yet encountered any critical bugs that broke my work flow.
+</p>
+
+<pre class="example">
+cd ~/.emacs.d
+git checkout develop
+</pre>
+
+<p>
+Run emacs now. On Windows, use the runemacs.exe instead of emacs.exe as the former doesn't spawn a terminal window. Spacemacs will run and install a bunch of things, and ask you some questions about the configuration you want. I went with the default ones.
+</p>
+</div>
+
+<div id="outline-container-org4099588" class="outline-3">
+<h3 id="org4099588"><span class="section-number-3">1.1</span> Ubuntu/Elementary OS setup</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Install Emacs from the app store. 25.2 was the available version at the time of writing. If you try running it, it'll most probably crash. If it doesn't, you probably don't need to do the next step.
+</p>
+<pre class="example">
+cp /usr/share/applications/emacs25.desktop ~/.local/share/applications/emacs25.desktop
+</pre>
+<p>
+Open the newly copied .emacs25.desktop file and replace Exec line with this: <code>Exec=/usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs25 %F</code>. You should now be able to launch Emacs without crashing. Add an alias to your .bashrc so that launching from command line works too: <code>alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs"</code>
+More info here: <a href="https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os">https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os</a>
+When running spacemacs initial setup, you might encounter an error about "Bad signature". This isn't a spacemacs-specific issue and is related to some expired gpg key, and supposedly isn't a problem for emacs versions 26+. After trying many methods, the only thing the worked for me is adding <code>(setq package-check-signature nil)</code> to the start of .spacemacs file. You can instead also try installing the package gnu-elpa-keyring-update and running the function, but that didn't work for me.
+Org brain package wasn't getting installed for me for some reason. Since I don't use it, I added it to excluded packages, and spacemacs loaded successfully.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95fd19a" class="outline-2">
+<h2 id="org95fd19a"><span class="section-number-2">2</span> Spacemacs configuration</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Open ~/.spacemacs file and give it a read. It's very well documented, and was somewhat easy to get a basic understanding of the settings within.
+You might want to configure font settings first. The default is set to <code>"Source Code Pro"</code> which may or may not be installed on your system. I changed mine to <code>"Consolas"</code> with <code>:size 12</code>. You might also want to change the <code>:powerline-scale</code> setting if your modeline/powerline (the bar at the bottom of your screen) has some rendering issues. (This doesn't seem necessary for 0.300)
+Next, enable/add the layers that you need under the <code>dotspacemacs-configuration-layers</code>. Layers can be thought of a set of packages (plugins) that get enabled when in a particular major-mode, and that play well together. Some of the plugins may require certain applications to be installed before they can work properly (like tern or linters).
+If you want to add a package without it being associated with a layer, you can add it under <code>dotspacemacs-additional-packages</code>. Packages that you don't want installed go under <code>dotspacemacs-excluded-packages</code>
+Custom configuration goes under <code>dotspacemacs/user-config</code>. Here's mine at the time of writing:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #8c8c8c;">(</span><span style="color: #8197bf;">defun</span> <span style="color: #fad07a;">dotspacemacs/user-config</span> <span style="color: #93a8c6;">()</span>
+  <span style="color: #93a8c6;">(</span>evil-select-search-module 'evil-search-module 'evil-search<span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> hybrid-mode-enable-hjkl-bindings t<span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> dotspacemacs-mode-line-unicode-symbols nil<span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> scroll-margin <span style="color: #447799;">10</span><span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> helm-ag-base-command <span style="color: #99ad6a;">"c:/ProgramData/chocolatey/bin/ag.exe --vimgrep"</span><span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span><span style="color: #8197bf;">setq</span> js-indent-level <span style="color: #447799;">2</span><span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span>add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off<span style="color: #93a8c6;">)</span>
+  <span style="color: #93a8c6;">(</span>add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>
+</pre>
+</div>
+<p>
+Here's a brief explanation of the settings above:
+</p>
+<ul class="org-ul">
+<li><code>evil-select-search-module</code> makes search behave more like vim's rather than emacs. <code>gn</code> command wan't working quite correctly without this setting.</li>
+<li><code>hybrid-mode-enable-hjkl-bindings</code> I'm not quite sure what this does. It's supposed to enable hjkl bindings outside of the main editor buffer as well, but I don't know exactly. I've set it to true, cause one can never have enough hjkl bindings I guess.</li>
+<li><code>dotspacemacs-mode-line-unicode-symbols</code> Enables/disables unicode symbols in the modeline. I disabled it cause they were looking ugly on Windows anyway. Someone on the internet also mentioned it might improve performance, but I couldn't really tell much difference.</li>
+<li><code>scroll-margin</code> This setting is similar to vim's <code>scrolloff</code> setting.</li>
+<li><code>helm-ag-base-command</code> Path to the installed Silver Searcher command. Silver searcher is better than the default <code>grep</code> search when searching for files or occurrences within a project cause <code>ag</code> respects your <code>.gitignore</code> file and doesn't clutter your search results with results from unnecessary sources (such as node<sub>modules</sub>). Remember to add the <code>--vimgrep</code> flag or it won't work correctly. This step isn't necessary on Mac and Unix. (Update: I'm using ripgrep instead of ag now, but the usage is similar).</li>
+<li><code>js-indent-level</code> This sets the indentation level (shiftwidth). I'm still not sure about how to correctly configure tabstops and indentation levels in emacs yet, but from what I could gather it seems like indentation is controlled by different variables depending on the major mode, which is quite a bummer. <code>js-indent-level</code> controls the indentation for js files</li>
+<li><code>add-hook</code> commands are somewhat similar to <code>autocmd</code> in vim, and is used to set major-mode specific settings. Here I'm setting line-wrapping and making <code>jk</code> keys traverse visual lines instead of actual lines.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org423df11" class="outline-2">
+<h2 id="org423df11"><span class="section-number-2">3</span> Spacemacs themes</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Setting a new theme in spacemacs is really simple. Visit <a href="https://themegallery.robdor.com/">https://themegallery.robdor.com/</a> and choose a theme that you like. Then add the theme to <code>dotspacemacs-themes</code> or replace an existing one. Here's what mine looks like: <code>dotspacemacs-themes '(jbeans spacemacs-dark)</code>. The themes can be cycled through by using <code>SPC T n</code>
+There's a layer called <code>themes-megapack</code>, but I would caution against using that as it seemed to mess with my .spacemacs configuration by adding a bunch of things under <code>custom-set-variables</code>, but I couldn't figure out what exactly and ended up resetting my .spacemacs file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6eaf73c" class="outline-2">
+<h2 id="org6eaf73c"><span class="section-number-2">4</span> LSP setup</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Check the <a href="https://github.com/emacs-lsp/lsp-mode">https://github.com/emacs-lsp/lsp-mode</a> link for various LSP servers. For javascript/typescript, the LSP server requires node to run. If you use nvm to manage your node instances, chances are that the node executable won't be found. You can verify this by running <code>eshell</code> command and typing <code>node</code>. If it says "Command not found", then your LSP server won't run. This happens because nvm alters the $PATH variable when running .bashrc, which isn't run when launching <code>eshell</code>. Altering the <code>exec-path</code> variable to add path to node binary didn't help me in this case. I found it easiest to create a symlink to node under /usr/local/bin
+</p>
+<pre class="example">
+sudo ln -s ~/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/node
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: devn</p>
+<p class="date">Created: 2020-01-22 Wed 00:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
