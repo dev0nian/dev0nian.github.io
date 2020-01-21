@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-22 Wed 00:05 -->
+<!-- 2020-01-22 Wed 00:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Spacemacs setup</title>
@@ -247,26 +247,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1c0a4b6">1. Spacemacs installation</a>
+<li><a href="#org843f7c4">1. Spacemacs installation</a>
 <ul>
-<li><a href="#org4099588">1.1. Ubuntu/Elementary OS setup</a></li>
+<li><a href="#orga5b56f5">1.1. Ubuntu/Elementary OS setup</a></li>
 </ul>
 </li>
-<li><a href="#org95fd19a">2. Spacemacs configuration</a></li>
-<li><a href="#org423df11">3. Spacemacs themes</a></li>
-<li><a href="#org6eaf73c">4. LSP setup</a></li>
+<li><a href="#org114c1fa">2. Spacemacs configuration</a></li>
+<li><a href="#org2113882">3. Spacemacs themes</a></li>
+<li><a href="#orgc442f42">4. LSP setup</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1c0a4b6" class="outline-2">
-<h2 id="org1c0a4b6"><span class="section-number-2">1</span> Spacemacs installation</h2>
+<div id="outline-container-org843f7c4" class="outline-2">
+<h2 id="org843f7c4"><span class="section-number-2">1</span> Spacemacs installation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Install emacs on your platform (<code>apt</code> on Ubuntu or the distro's app store, <code>brew</code> on MacOS (update: better to install from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a> since you'll get proper GUI support), download .exe from <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a> for Windows). Install 32-bit version (at least if you are on Windows) as that seems to have better performance compared to the 64-bit version. I downloaded <code>emacs-26.3-i686.zip</code> for my Windows machine
+Install emacs on your platform (<code>apt</code> on Ubuntu or the distro's app store, <code>brew</code> on MacOS (update: better to install from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a> since you'll get proper GUI support), download .exe from <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a> for Windows). Install 32-bit version (at least if you are on Windows) as that seems to have better performance compared to the 64-bit version. I downloaded <code>emacs-26.3-i686.zip</code> for my Windows machine<br />
 </p>
 
 <p>
-Run the following commands:
+Run the following commands:<br />
 </p>
 
 <pre class="example">
@@ -275,7 +275,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 </pre>
 
 <p>
-At the time of writing (Dec 2019), the released version of spacemacs is 0.200. Performance of this version seems a bit lacking. Start up time feels too long, files are slow to load sometimes, and cursor movement is also slow at times. Switching to <code>develop</code> branch seems to improve performance by quite a margin, and also enable the latest features. Of course, you run the risk of some stuff being broken, but it's been worth it for the performance gains, and I haven't yet encountered any critical bugs that broke my work flow.
+At the time of writing (Dec 2019), the released version of spacemacs is 0.200. Performance of this version seems a bit lacking. Start up time feels too long, files are slow to load sometimes, and cursor movement is also slow at times. Switching to <code>develop</code> branch seems to improve performance by quite a margin, and also enable the latest features. Of course, you run the risk of some stuff being broken, but it's been worth it for the performance gains, and I haven't yet encountered any critical bugs that broke my work flow.<br />
 </p>
 
 <pre class="example">
@@ -284,38 +284,38 @@ git checkout develop
 </pre>
 
 <p>
-Run emacs now. On Windows, use the runemacs.exe instead of emacs.exe as the former doesn't spawn a terminal window. Spacemacs will run and install a bunch of things, and ask you some questions about the configuration you want. I went with the default ones.
+Run emacs now. On Windows, use the runemacs.exe instead of emacs.exe as the former doesn't spawn a terminal window. Spacemacs will run and install a bunch of things, and ask you some questions about the configuration you want. I went with the default ones.<br />
 </p>
 </div>
 
-<div id="outline-container-org4099588" class="outline-3">
-<h3 id="org4099588"><span class="section-number-3">1.1</span> Ubuntu/Elementary OS setup</h3>
+<div id="outline-container-orga5b56f5" class="outline-3">
+<h3 id="orga5b56f5"><span class="section-number-3">1.1</span> Ubuntu/Elementary OS setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-Install Emacs from the app store. 25.2 was the available version at the time of writing. If you try running it, it'll most probably crash. If it doesn't, you probably don't need to do the next step.
+Install Emacs from the app store. 25.2 was the available version at the time of writing. If you try running it, it'll most probably crash. If it doesn't, you probably don't need to do the next step.<br />
 </p>
 <pre class="example">
 cp /usr/share/applications/emacs25.desktop ~/.local/share/applications/emacs25.desktop
 </pre>
 <p>
-Open the newly copied .emacs25.desktop file and replace Exec line with this: <code>Exec=/usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs25 %F</code>. You should now be able to launch Emacs without crashing. Add an alias to your .bashrc so that launching from command line works too: <code>alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs"</code>
-More info here: <a href="https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os">https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os</a>
-When running spacemacs initial setup, you might encounter an error about "Bad signature". This isn't a spacemacs-specific issue and is related to some expired gpg key, and supposedly isn't a problem for emacs versions 26+. After trying many methods, the only thing the worked for me is adding <code>(setq package-check-signature nil)</code> to the start of .spacemacs file. You can instead also try installing the package gnu-elpa-keyring-update and running the function, but that didn't work for me.
-Org brain package wasn't getting installed for me for some reason. Since I don't use it, I added it to excluded packages, and spacemacs loaded successfully.
+Open the newly copied .emacs25.desktop file and replace Exec line with this: <code>Exec=/usr/bin/env XLIB_SKIP_ARGB_VISUALS=1 emacs25 %F</code>. You should now be able to launch Emacs without crashing. Add an alias to your .bashrc so that launching from command line works too: <code>alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs"</code><br />
+More info here: <a href="https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os">https://elementaryos.stackexchange.com/questions/797/how-to-get-gnu-emacs-work-on-elementary-os</a><br />
+When running spacemacs initial setup, you might encounter an error about "Bad signature". This isn't a spacemacs-specific issue and is related to some expired gpg key, and supposedly isn't a problem for emacs versions 26+. After trying many methods, the only thing the worked for me is adding <code>(setq package-check-signature nil)</code> to the start of .spacemacs file. You can instead also try installing the package gnu-elpa-keyring-update and running the function, but that didn't work for me.<br />
+Org brain package wasn't getting installed for me for some reason. Since I don't use it, I added it to excluded packages, and spacemacs loaded successfully.<br />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org95fd19a" class="outline-2">
-<h2 id="org95fd19a"><span class="section-number-2">2</span> Spacemacs configuration</h2>
+<div id="outline-container-org114c1fa" class="outline-2">
+<h2 id="org114c1fa"><span class="section-number-2">2</span> Spacemacs configuration</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Open ~/.spacemacs file and give it a read. It's very well documented, and was somewhat easy to get a basic understanding of the settings within.
-You might want to configure font settings first. The default is set to <code>"Source Code Pro"</code> which may or may not be installed on your system. I changed mine to <code>"Consolas"</code> with <code>:size 12</code>. You might also want to change the <code>:powerline-scale</code> setting if your modeline/powerline (the bar at the bottom of your screen) has some rendering issues. (This doesn't seem necessary for 0.300)
-Next, enable/add the layers that you need under the <code>dotspacemacs-configuration-layers</code>. Layers can be thought of a set of packages (plugins) that get enabled when in a particular major-mode, and that play well together. Some of the plugins may require certain applications to be installed before they can work properly (like tern or linters).
-If you want to add a package without it being associated with a layer, you can add it under <code>dotspacemacs-additional-packages</code>. Packages that you don't want installed go under <code>dotspacemacs-excluded-packages</code>
-Custom configuration goes under <code>dotspacemacs/user-config</code>. Here's mine at the time of writing:
+Open ~/.spacemacs file and give it a read. It's very well documented, and was somewhat easy to get a basic understanding of the settings within.<br />
+You might want to configure font settings first. The default is set to <code>"Source Code Pro"</code> which may or may not be installed on your system. I changed mine to <code>"Consolas"</code> with <code>:size 12</code>. You might also want to change the <code>:powerline-scale</code> setting if your modeline/powerline (the bar at the bottom of your screen) has some rendering issues. (This doesn't seem necessary for 0.300)<br />
+Next, enable/add the layers that you need under the <code>dotspacemacs-configuration-layers</code>. Layers can be thought of a set of packages (plugins) that get enabled when in a particular major-mode, and that play well together. Some of the plugins may require certain applications to be installed before they can work properly (like tern or linters).<br />
+If you want to add a package without it being associated with a layer, you can add it under <code>dotspacemacs-additional-packages</code>. Packages that you don't want installed go under <code>dotspacemacs-excluded-packages</code><br />
+Custom configuration goes under <code>dotspacemacs/user-config</code>. Here's mine at the time of writing:<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #8c8c8c;">(</span><span style="color: #8197bf;">defun</span> <span style="color: #fad07a;">dotspacemacs/user-config</span> <span style="color: #93a8c6;">()</span>
@@ -330,35 +330,35 @@ Custom configuration goes under <code>dotspacemacs/user-config</code>. Here's mi
 </pre>
 </div>
 <p>
-Here's a brief explanation of the settings above:
+Here's a brief explanation of the settings above:<br />
 </p>
 <ul class="org-ul">
-<li><code>evil-select-search-module</code> makes search behave more like vim's rather than emacs. <code>gn</code> command wan't working quite correctly without this setting.</li>
-<li><code>hybrid-mode-enable-hjkl-bindings</code> I'm not quite sure what this does. It's supposed to enable hjkl bindings outside of the main editor buffer as well, but I don't know exactly. I've set it to true, cause one can never have enough hjkl bindings I guess.</li>
-<li><code>dotspacemacs-mode-line-unicode-symbols</code> Enables/disables unicode symbols in the modeline. I disabled it cause they were looking ugly on Windows anyway. Someone on the internet also mentioned it might improve performance, but I couldn't really tell much difference.</li>
-<li><code>scroll-margin</code> This setting is similar to vim's <code>scrolloff</code> setting.</li>
-<li><code>helm-ag-base-command</code> Path to the installed Silver Searcher command. Silver searcher is better than the default <code>grep</code> search when searching for files or occurrences within a project cause <code>ag</code> respects your <code>.gitignore</code> file and doesn't clutter your search results with results from unnecessary sources (such as node<sub>modules</sub>). Remember to add the <code>--vimgrep</code> flag or it won't work correctly. This step isn't necessary on Mac and Unix. (Update: I'm using ripgrep instead of ag now, but the usage is similar).</li>
-<li><code>js-indent-level</code> This sets the indentation level (shiftwidth). I'm still not sure about how to correctly configure tabstops and indentation levels in emacs yet, but from what I could gather it seems like indentation is controlled by different variables depending on the major mode, which is quite a bummer. <code>js-indent-level</code> controls the indentation for js files</li>
-<li><code>add-hook</code> commands are somewhat similar to <code>autocmd</code> in vim, and is used to set major-mode specific settings. Here I'm setting line-wrapping and making <code>jk</code> keys traverse visual lines instead of actual lines.</li>
+<li><code>evil-select-search-module</code> makes search behave more like vim's rather than emacs. <code>gn</code> command wan't working quite correctly without this setting.<br /></li>
+<li><code>hybrid-mode-enable-hjkl-bindings</code> I'm not quite sure what this does. It's supposed to enable hjkl bindings outside of the main editor buffer as well, but I don't know exactly. I've set it to true, cause one can never have enough hjkl bindings I guess.<br /></li>
+<li><code>dotspacemacs-mode-line-unicode-symbols</code> Enables/disables unicode symbols in the modeline. I disabled it cause they were looking ugly on Windows anyway. Someone on the internet also mentioned it might improve performance, but I couldn't really tell much difference.<br /></li>
+<li><code>scroll-margin</code> This setting is similar to vim's <code>scrolloff</code> setting.<br /></li>
+<li><code>helm-ag-base-command</code> Path to the installed Silver Searcher command. Silver searcher is better than the default <code>grep</code> search when searching for files or occurrences within a project cause <code>ag</code> respects your <code>.gitignore</code> file and doesn't clutter your search results with results from unnecessary sources (such as node<sub>modules</sub>). Remember to add the <code>--vimgrep</code> flag or it won't work correctly. This step isn't necessary on Mac and Unix. (Update: I'm using ripgrep instead of ag now, but the usage is similar).<br /></li>
+<li><code>js-indent-level</code> This sets the indentation level (shiftwidth). I'm still not sure about how to correctly configure tabstops and indentation levels in emacs yet, but from what I could gather it seems like indentation is controlled by different variables depending on the major mode, which is quite a bummer. <code>js-indent-level</code> controls the indentation for js files<br /></li>
+<li><code>add-hook</code> commands are somewhat similar to <code>autocmd</code> in vim, and is used to set major-mode specific settings. Here I'm setting line-wrapping and making <code>jk</code> keys traverse visual lines instead of actual lines.<br /></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org423df11" class="outline-2">
-<h2 id="org423df11"><span class="section-number-2">3</span> Spacemacs themes</h2>
+<div id="outline-container-org2113882" class="outline-2">
+<h2 id="org2113882"><span class="section-number-2">3</span> Spacemacs themes</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-Setting a new theme in spacemacs is really simple. Visit <a href="https://themegallery.robdor.com/">https://themegallery.robdor.com/</a> and choose a theme that you like. Then add the theme to <code>dotspacemacs-themes</code> or replace an existing one. Here's what mine looks like: <code>dotspacemacs-themes '(jbeans spacemacs-dark)</code>. The themes can be cycled through by using <code>SPC T n</code>
-There's a layer called <code>themes-megapack</code>, but I would caution against using that as it seemed to mess with my .spacemacs configuration by adding a bunch of things under <code>custom-set-variables</code>, but I couldn't figure out what exactly and ended up resetting my .spacemacs file.
+Setting a new theme in spacemacs is really simple. Visit <a href="https://themegallery.robdor.com/">https://themegallery.robdor.com/</a> and choose a theme that you like. Then add the theme to <code>dotspacemacs-themes</code> or replace an existing one. Here's what mine looks like: <code>dotspacemacs-themes '(jbeans spacemacs-dark)</code>. The themes can be cycled through by using <code>SPC T n</code><br />
+There's a layer called <code>themes-megapack</code>, but I would caution against using that as it seemed to mess with my .spacemacs configuration by adding a bunch of things under <code>custom-set-variables</code>, but I couldn't figure out what exactly and ended up resetting my .spacemacs file.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6eaf73c" class="outline-2">
-<h2 id="org6eaf73c"><span class="section-number-2">4</span> LSP setup</h2>
+<div id="outline-container-orgc442f42" class="outline-2">
+<h2 id="orgc442f42"><span class="section-number-2">4</span> LSP setup</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Check the <a href="https://github.com/emacs-lsp/lsp-mode">https://github.com/emacs-lsp/lsp-mode</a> link for various LSP servers. For javascript/typescript, the LSP server requires node to run. If you use nvm to manage your node instances, chances are that the node executable won't be found. You can verify this by running <code>eshell</code> command and typing <code>node</code>. If it says "Command not found", then your LSP server won't run. This happens because nvm alters the $PATH variable when running .bashrc, which isn't run when launching <code>eshell</code>. Altering the <code>exec-path</code> variable to add path to node binary didn't help me in this case. I found it easiest to create a symlink to node under /usr/local/bin
+Check the <a href="https://github.com/emacs-lsp/lsp-mode">https://github.com/emacs-lsp/lsp-mode</a> link for various LSP servers. For javascript/typescript, the LSP server requires node to run. If you use nvm to manage your node instances, chances are that the node executable won't be found. You can verify this by running <code>eshell</code> command and typing <code>node</code>. If it says "Command not found", then your LSP server won't run. This happens because nvm alters the $PATH variable when running .bashrc, which isn't run when launching <code>eshell</code>. Altering the <code>exec-path</code> variable to add path to node binary didn't help me in this case. I found it easiest to create a symlink to node under /usr/local/bin<br />
 </p>
 <pre class="example">
 sudo ln -s ~/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/node
@@ -368,7 +368,7 @@ sudo ln -s ~/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/node
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: devn</p>
-<p class="date">Created: 2020-01-22 Wed 00:05</p>
+<p class="date">Created: 2020-01-22 Wed 00:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
