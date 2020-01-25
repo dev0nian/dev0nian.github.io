@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-22 Wed 00:08 -->
+<!-- 2020-01-25 Sat 19:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs notes</title>
@@ -193,6 +193,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -269,46 +275,48 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org62b7a7b">1. Emacs</a>
+<li><a href="#orgf07ffe3">1. Emacs</a>
 <ul>
-<li><a href="#orgb748d1b">1.1. General info</a></li>
-<li><a href="#orgf33394b">1.2. Random tidbits of info</a></li>
-<li><a href="#org6d5fba2">1.3. Regex</a></li>
-<li><a href="#orgb61c191">1.4. Dired</a></li>
-<li><a href="#org103c217">1.5. Exec path</a></li>
+<li><a href="#org2fbd959">1.1. General info</a></li>
+<li><a href="#org162f9c8">1.2. Random tidbits of info</a></li>
+<li><a href="#org469911a">1.3. Regex</a></li>
+<li><a href="#orge439f09">1.4. Dired</a></li>
+<li><a href="#orgfa3451a">1.5. Exec path</a></li>
 </ul>
 </li>
-<li><a href="#org1a38096">2. Spacemacs:</a>
+<li><a href="#org83d4ebf">2. Spacemacs:</a>
 <ul>
-<li><a href="#orgf5a18a8">2.1. Some interesting toggles and settings:</a></li>
-<li><a href="#org1b1e877">2.2. Help:</a></li>
-<li><a href="#org1f8b598">2.3. File operations:</a></li>
-<li><a href="#org20a42c9">2.4. Selection:</a></li>
-<li><a href="#org25ed702">2.5. Indentation:</a></li>
-<li><a href="#org753c138">2.6. Layouts and workspaces</a></li>
-<li><a href="#orge7cdfae">2.7. Projects</a></li>
-<li><a href="#orgfd23821">2.8. Changing escape key</a></li>
-<li><a href="#orgdb6a2d7">2.9. Some interesting packages found pre-installed in Spacemacs</a></li>
-<li><a href="#org4aeeb4a">2.10. Folding</a></li>
+<li><a href="#org165d8ba">2.1. Some interesting toggles and settings:</a></li>
+<li><a href="#org00bbd65">2.2. Help:</a></li>
+<li><a href="#orgd64def4">2.3. File operations:</a></li>
+<li><a href="#org8e8c359">2.4. Selection:</a></li>
+<li><a href="#org60ad936">2.5. Indentation:</a></li>
+<li><a href="#orgc80faad">2.6. Layouts and workspaces</a></li>
+<li><a href="#orgb669f6e">2.7. Projects</a></li>
+<li><a href="#org9ef07a0">2.8. Changing escape key</a></li>
+<li><a href="#orgef4f41e">2.9. Some interesting packages found pre-installed in Spacemacs</a></li>
+<li><a href="#orgeaf196c">2.10. Folding</a></li>
+<li><a href="#orgf702e68">2.11. Searching</a></li>
+<li><a href="#orgc19779c">2.12. Helm</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org62b7a7b" class="outline-2">
-<h2 id="org62b7a7b"><span class="section-number-2">1</span> Emacs</h2>
+<div id="outline-container-orgf07ffe3" class="outline-2">
+<h2 id="orgf07ffe3"><span class="section-number-2">1</span> Emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgb748d1b" class="outline-3">
-<h3 id="orgb748d1b"><span class="section-number-3">1.1</span> General info</h3>
+<div id="outline-container-org2fbd959" class="outline-3">
+<h3 id="org2fbd959"><span class="section-number-3">1.1</span> General info</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Emacs is an extensible text editor. Most of emacs is written in elisp which also happens to be its scripting language, which means that it's far more extensible than most other editors.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgf33394b" class="outline-3">
-<h3 id="orgf33394b"><span class="section-number-3">1.2</span> Random tidbits of info</h3>
+<div id="outline-container-org162f9c8" class="outline-3">
+<h3 id="org162f9c8"><span class="section-number-3">1.2</span> Random tidbits of info</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Key chords or key maps work differently in emacs. They're all bound to an elisp function. So you would bind a new key map to a function mostly, rather than key strokes (like is sometimes done in vim) Macros have the facility to stop during execution for user input.<br />
@@ -319,8 +327,8 @@ There's picture-mode and artist-mode which can be used to make simple ascii draw
 </div>
 </div>
 
-<div id="outline-container-org6d5fba2" class="outline-3">
-<h3 id="org6d5fba2"><span class="section-number-3">1.3</span> Regex</h3>
+<div id="outline-container-org469911a" class="outline-3">
+<h3 id="org469911a"><span class="section-number-3">1.3</span> Regex</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Regex in emacs is different from that in Vim, which itself is slightly different from something like in Javascript or Perl, because why not? All parentheses require escaping, so does the "|" (or) character.<br />
@@ -379,8 +387,8 @@ From the cursory search I did on the web, there seem to be ways to convert Emacs
 </div>
 </div>
 
-<div id="outline-container-orgb61c191" class="outline-3">
-<h3 id="orgb61c191"><span class="section-number-3">1.4</span> Dired</h3>
+<div id="outline-container-orge439f09" class="outline-3">
+<h3 id="orge439f09"><span class="section-number-3">1.4</span> Dired</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Dired (Directory Editor) is the equivalent of vim's netrw. Regular keys like <code>hjkl</code> and <code>/</code> work for navigation and searching, but other keys might be different from vim<br />
@@ -421,7 +429,7 @@ Dired (Directory Editor) is the equivalent of vim's netrw. Regular keys like <co
 </tr>
 
 <tr>
-<td class="org-left">Rename</td>
+<td class="org-left">Rename/Move</td>
 <td class="org-left">R</td>
 </tr>
 
@@ -468,8 +476,8 @@ Update: I'm now using <code>treemacs</code> which comes with Spacemacs v300, and
 </p>
 </div>
 </div>
-<div id="outline-container-org103c217" class="outline-3">
-<h3 id="org103c217"><span class="section-number-3">1.5</span> Exec path</h3>
+<div id="outline-container-orgfa3451a" class="outline-3">
+<h3 id="orgfa3451a"><span class="section-number-3">1.5</span> Exec path</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 The value of the environment variable $PATH is used by emacs when running programs in a shell (not eshell), but <code>exec-path</code> is used by emacs itself to find programs it needs for features to work. To add paths: <code>(setq exec-path (append exec-path '("/path/to/program")))</code>.<br />
@@ -478,12 +486,12 @@ If adding to <code>exec-path</code> doesn't work, you can also try modifying the
 </div>
 </div>
 </div>
-<div id="outline-container-org1a38096" class="outline-2">
-<h2 id="org1a38096"><span class="section-number-2">2</span> Spacemacs:</h2>
+<div id="outline-container-org83d4ebf" class="outline-2">
+<h2 id="org83d4ebf"><span class="section-number-2">2</span> Spacemacs:</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgf5a18a8" class="outline-3">
-<h3 id="orgf5a18a8"><span class="section-number-3">2.1</span> Some interesting toggles and settings:</h3>
+<div id="outline-container-org165d8ba" class="outline-3">
+<h3 id="org165d8ba"><span class="section-number-3">2.1</span> Some interesting toggles and settings:</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 SPC T F -&gt; Toggle fullscreen<br />
@@ -504,8 +512,8 @@ The toggles above are usually bound to elisp functions. If you need some of them
 </div>
 </div>
 
-<div id="outline-container-org1b1e877" class="outline-3">
-<h3 id="org1b1e877"><span class="section-number-3">2.2</span> Help:</h3>
+<div id="outline-container-org00bbd65" class="outline-3">
+<h3 id="org00bbd65"><span class="section-number-3">2.2</span> Help:</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 SPC ? -&gt; Search for specific key bindings. Ex: "SPC\ b" lists all buffer related bindings<br />
@@ -523,8 +531,8 @@ Emacs help section can be different from spacemacs help section. For ex, there i
 </div>
 </div>
 
-<div id="outline-container-org1f8b598" class="outline-3">
-<h3 id="org1f8b598"><span class="section-number-3">2.3</span> File operations:</h3>
+<div id="outline-container-orgd64def4" class="outline-3">
+<h3 id="orgd64def4"><span class="section-number-3">2.3</span> File operations:</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 SPC f b -&gt; File bookmarks<br />
@@ -534,8 +542,8 @@ SPC E b b -&gt; <code>ediff-buffers</code> Start diff between open buffers<br />
 </div>
 </div>
 
-<div id="outline-container-org20a42c9" class="outline-3">
-<h3 id="org20a42c9"><span class="section-number-3">2.4</span> Selection:</h3>
+<div id="outline-container-org8e8c359" class="outline-3">
+<h3 id="org8e8c359"><span class="section-number-3">2.4</span> Selection:</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 SPC v -&gt; start region selection. Then use v and V to expand or contract by one semantic unit<br />
@@ -543,8 +551,8 @@ SPC v -&gt; start region selection. Then use v and V to expand or contract by on
 </div>
 </div>
 
-<div id="outline-container-org25ed702" class="outline-3">
-<h3 id="org25ed702"><span class="section-number-3">2.5</span> Indentation:</h3>
+<div id="outline-container-org60ad936" class="outline-3">
+<h3 id="org60ad936"><span class="section-number-3">2.5</span> Indentation:</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Indentation levels seem to be controlled by different variables depending on the major mode one is in.<br />
@@ -568,8 +576,8 @@ For ex: In js mode, js-indent-level variable controls the indentation<br />
 </div>
 </div>
 </div>
-<div id="outline-container-org753c138" class="outline-3">
-<h3 id="org753c138"><span class="section-number-3">2.6</span> Layouts and workspaces</h3>
+<div id="outline-container-orgc80faad" class="outline-3">
+<h3 id="orgc80faad"><span class="section-number-3">2.6</span> Layouts and workspaces</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Workspaces are similar to vim's tabs, and they can even be navigated using gt and gT. Layouts are more like a collection of windows, and can be used to provide buffer isolation, meaning buffers created under one Layout aren't available in other Layouts. Workspaces created under a Layout all share the same buffer list. A good way to use Layouts is to have one Layout per project.<br />
@@ -577,24 +585,24 @@ To open a project in a new Layout, use "SPC p l", then use "SPC l 0..9" to switc
 </p>
 </div>
 </div>
-<div id="outline-container-orge7cdfae" class="outline-3">
-<h3 id="orge7cdfae"><span class="section-number-3">2.7</span> Projects</h3>
+<div id="outline-container-orgb669f6e" class="outline-3">
+<h3 id="orgb669f6e"><span class="section-number-3">2.7</span> Projects</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Spacemacs uses projectile package to manage projects. Projectile's functions are accessed through "SPC p". <code>projectile-discover-projects-in-directory</code> is a useful command to discover all projects within a directory.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd23821" class="outline-3">
-<h3 id="orgfd23821"><span class="section-number-3">2.8</span> Changing escape key</h3>
+<div id="outline-container-org9ef07a0" class="outline-3">
+<h3 id="org9ef07a0"><span class="section-number-3">2.8</span> Changing escape key</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 <code>(setq-default evil-escape-key-sequence "jk")</code> Use <code>(kbd "")</code> function if you want to use Control/Meta/Shift keys.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgdb6a2d7" class="outline-3">
-<h3 id="orgdb6a2d7"><span class="section-number-3">2.9</span> Some interesting packages found pre-installed in Spacemacs</h3>
+<div id="outline-container-orgef4f41e" class="outline-3">
+<h3 id="orgef4f41e"><span class="section-number-3">2.9</span> Some interesting packages found pre-installed in Spacemacs</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
 <li>Dumb jump: jump to definition capability provided only using search (no tags/external parser)<br /></li>
@@ -605,8 +613,8 @@ Spacemacs uses projectile package to manage projects. Projectile's functions are
 </ul>
 </div>
 </div>
-<div id="outline-container-org4aeeb4a" class="outline-3">
-<h3 id="org4aeeb4a"><span class="section-number-3">2.10</span> Folding</h3>
+<div id="outline-container-orgeaf196c" class="outline-3">
+<h3 id="orgeaf196c"><span class="section-number-3">2.10</span> Folding</h3>
 <div class="outline-text-3" id="text-2-10">
 <p>
 <code>SPC z .</code> Opens a transient state that can be useful for easily closing/opening folds. Vim's basic fold toggle command <code>za</code> works as well. In the transient state you may notice that there's no command to recursively close all folds, which is unfortunate, but <code>hs-hide-level</code> function compensates for it quite well.<br />
@@ -614,11 +622,30 @@ One very useful command is <code>hs-hide-level</code> which when called when the
 </p>
 </div>
 </div>
+<div id="outline-container-orgf702e68" class="outline-3">
+<h3 id="orgf702e68"><span class="section-number-3">2.11</span> Searching</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+SPC p f -&gt; search for a file in the current project.<br />
+SPC / -&gt; search for a pattern in the current project.<br />
+SPC * -&gt; search for the pattern under point in the current project.<br />
+If you have too many search results in helm, you can save them to a buffer for easier navigation using <code>C-x C-s</code>. You can still press <code>RET</code> in the buffer to open the corresponding file.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc19779c" class="outline-3">
+<h3 id="orgc19779c"><span class="section-number-3">2.12</span> Helm</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+<code>SPC r y</code> calls <code>lazy-helm/helm-show-kill-ring</code> which is like a souped up version of <code>:reg</code> command in vim. It shows all the recent copied text in a helm buffer which can be navigated using <code>C-j/k</code> and <code>RET</code> will yank (paste) in into the current buffer.<br />
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: devn</p>
-<p class="date">Created: 2020-01-22 Wed 00:08</p>
+<p class="date">Created: 2020-01-25 Sat 19:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

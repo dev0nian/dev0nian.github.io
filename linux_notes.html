@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-22 Wed 00:07 -->
+<!-- 2020-01-25 Sat 19:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux notes</title>
@@ -193,6 +193,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -247,48 +253,48 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7df347d">1. Files and Directories</a>
+<li><a href="#org90b5b90">1. Files and Directories</a>
 <ul>
-<li><a href="#org73b9a2a">1.1. Basic commands</a></li>
-<li><a href="#orgceca5e1">1.2. Navigating directories</a></li>
-<li><a href="#orgd5b9b0f">1.3. Type of files</a></li>
-<li><a href="#org16de2a3">1.4. Locating files and commands</a></li>
-<li><a href="#org003d08d">1.5. Find files</a></li>
-<li><a href="#org96722be">1.6. Some quick file related commands</a></li>
+<li><a href="#orgabcb03a">1.1. Basic commands</a></li>
+<li><a href="#org3c50773">1.2. Navigating directories</a></li>
+<li><a href="#org7c41e2a">1.3. Type of files</a></li>
+<li><a href="#orgcc92039">1.4. Locating files and commands</a></li>
+<li><a href="#orgd4ccb4e">1.5. Find files</a></li>
+<li><a href="#org89afbc5">1.6. Some quick file related commands</a></li>
 </ul>
 </li>
-<li><a href="#org369067e">2. Help and manual pages</a></li>
-<li><a href="#org56e5f81">3. Package managers</a>
+<li><a href="#orgacee2bb">2. Help and manual pages</a></li>
+<li><a href="#org8852b2a">3. Package managers</a>
 <ul>
-<li><a href="#orgb590b67">3.1. <code>apt</code> vs <code>apt-get</code></a></li>
-<li><a href="#org07e4b6e">3.2. Installing using dpkg</a></li>
+<li><a href="#org7f9c61c">3.1. <code>apt</code> vs <code>apt-get</code></a></li>
+<li><a href="#org8593e86">3.2. Installing using dpkg</a></li>
 </ul>
 </li>
-<li><a href="#org461fabb">4. Processes and services</a>
+<li><a href="#orgbca76a4">4. Processes and services</a>
 <ul>
-<li><a href="#orgbe2d058">4.1. Some basic commands related to processes</a></li>
-<li><a href="#orgf0440e1">4.2. Services</a></li>
+<li><a href="#org8f560fe">4.1. Some basic commands related to processes</a></li>
+<li><a href="#org89199ed">4.2. Services</a></li>
 </ul>
 </li>
-<li><a href="#org592b9dd">5. Disk usage</a></li>
-<li><a href="#org90fb513">6. Scheduling tasks</a></li>
-<li><a href="#orgedc73e6">7. Readline tips</a></li>
-<li><a href="#orgd479e8b">8. Misc</a></li>
-<li><a href="#orgecc12bc">9. Elementary OS specific notes (v5.1)</a>
+<li><a href="#org561bcf0">5. Disk usage</a></li>
+<li><a href="#orga761121">6. Scheduling tasks</a></li>
+<li><a href="#org87f223b">7. Readline tips</a></li>
+<li><a href="#org763c975">8. Misc</a></li>
+<li><a href="#org61f7528">9. Elementary OS specific notes (v5.1)</a>
 <ul>
-<li><a href="#orgf57d5ac">9.1. Dark theme and additional UI tweaks</a></li>
-<li><a href="#org0333a62">9.2. Misc bugs or inconveniences</a></li>
+<li><a href="#org90d99fa">9.1. Dark theme and additional UI tweaks</a></li>
+<li><a href="#org8e2362a">9.2. Misc bugs or inconveniences</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7df347d" class="outline-2">
-<h2 id="org7df347d"><span class="section-number-2">1</span> Files and Directories</h2>
+<div id="outline-container-org90b5b90" class="outline-2">
+<h2 id="org90b5b90"><span class="section-number-2">1</span> Files and Directories</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org73b9a2a" class="outline-3">
-<h3 id="org73b9a2a"><span class="section-number-3">1.1</span> Basic commands</h3>
+<div id="outline-container-orgabcb03a" class="outline-3">
+<h3 id="orgabcb03a"><span class="section-number-3">1.1</span> Basic commands</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><code>ls</code> list files<br /></li>
@@ -300,8 +306,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgceca5e1" class="outline-3">
-<h3 id="orgceca5e1"><span class="section-number-3">1.2</span> Navigating directories</h3>
+<div id="outline-container-org3c50773" class="outline-3">
+<h3 id="org3c50773"><span class="section-number-3">1.2</span> Navigating directories</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li><code>pushd</code> Push the current directory into a stack so it can be popped later and cd into the given directory<br /></li>
@@ -311,8 +317,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd5b9b0f" class="outline-3">
-<h3 id="orgd5b9b0f"><span class="section-number-3">1.3</span> Type of files</h3>
+<div id="outline-container-org7c41e2a" class="outline-3">
+<h3 id="org7c41e2a"><span class="section-number-3">1.3</span> Type of files</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Linux doesn't need file extension to correctly identify the type of file. You can see the type of a file that doesn't have an extension using the <code>file</code> command.<br />
@@ -324,8 +330,8 @@ translations.json: UTF-8 Unicode text, with very long lines
 </div>
 </div>
 
-<div id="outline-container-org16de2a3" class="outline-3">
-<h3 id="org16de2a3"><span class="section-number-3">1.4</span> Locating files and commands</h3>
+<div id="outline-container-orgcc92039" class="outline-3">
+<h3 id="orgcc92039"><span class="section-number-3">1.4</span> Locating files and commands</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Use the <code>locate</code> command when you know the name of a file, but are unsure about which directory it resides in. Make sure to run <code>sudo updatedb</code>, so that all the files are indexed.<br />
@@ -340,8 +346,8 @@ The <code>which</code> command is used to locate a command and prints the full p
 </p>
 </div>
 </div>
-<div id="outline-container-org003d08d" class="outline-3">
-<h3 id="org003d08d"><span class="section-number-3">1.5</span> Find files</h3>
+<div id="outline-container-orgd4ccb4e" class="outline-3">
+<h3 id="orgd4ccb4e"><span class="section-number-3">1.5</span> Find files</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Use the <code>find</code> command to find directories and files within a directory. Some interesting flags:<br />
@@ -359,8 +365,8 @@ Use the <code>find</code> command to find directories and files within a directo
 </div>
 </div>
 
-<div id="outline-container-org96722be" class="outline-3">
-<h3 id="org96722be"><span class="section-number-3">1.6</span> Some quick file related commands</h3>
+<div id="outline-container-org89afbc5" class="outline-3">
+<h3 id="org89afbc5"><span class="section-number-3">1.6</span> Some quick file related commands</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 <code>touch &lt;filename&gt;</code> to create an empty file.<br />
@@ -372,8 +378,8 @@ Use the <code>find</code> command to find directories and files within a directo
 </div>
 </div>
 
-<div id="outline-container-org369067e" class="outline-2">
-<h2 id="org369067e"><span class="section-number-2">2</span> Help and manual pages</h2>
+<div id="outline-container-orgacee2bb" class="outline-2">
+<h2 id="orgacee2bb"><span class="section-number-2">2</span> Help and manual pages</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The <code>whatis</code> command gives a short description of the command<br />
@@ -413,12 +419,12 @@ The <code>man</code> command displays the entire manual for that command if one 
 </div>
 </div>
 
-<div id="outline-container-org56e5f81" class="outline-2">
-<h2 id="org56e5f81"><span class="section-number-2">3</span> Package managers</h2>
+<div id="outline-container-org8852b2a" class="outline-2">
+<h2 id="org8852b2a"><span class="section-number-2">3</span> Package managers</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb590b67" class="outline-3">
-<h3 id="orgb590b67"><span class="section-number-3">3.1</span> <code>apt</code> vs <code>apt-get</code></h3>
+<div id="outline-container-org7f9c61c" class="outline-3">
+<h3 id="org7f9c61c"><span class="section-number-3">3.1</span> <code>apt</code> vs <code>apt-get</code></h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>apt</code> is a more simplified version of apt-get. A lot of the <code>apt-get</code> commands have a corresponding command with <code>apt</code>, but this is not always the case. For most regular use cases, <code>apt</code> is sufficient. This specifically applies to Ubuntu distributions.<br />
@@ -488,8 +494,8 @@ The <code>man</code> command displays the entire manual for that command if one 
 </div>
 </div>
 
-<div id="outline-container-org07e4b6e" class="outline-3">
-<h3 id="org07e4b6e"><span class="section-number-3">3.2</span> Installing using dpkg</h3>
+<div id="outline-container-org8593e86" class="outline-3">
+<h3 id="org8593e86"><span class="section-number-3">3.2</span> Installing using dpkg</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 If you have a .deb file (Debian package), you can use the following command to install<br />
@@ -500,12 +506,12 @@ sudo dpkg -i /path/to/file.deb
 </div>
 </div>
 </div>
-<div id="outline-container-org461fabb" class="outline-2">
-<h2 id="org461fabb"><span class="section-number-2">4</span> Processes and services</h2>
+<div id="outline-container-orgbca76a4" class="outline-2">
+<h2 id="orgbca76a4"><span class="section-number-2">4</span> Processes and services</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgbe2d058" class="outline-3">
-<h3 id="orgbe2d058"><span class="section-number-3">4.1</span> Some basic commands related to processes</h3>
+<div id="outline-container-org8f560fe" class="outline-3">
+<h3 id="org8f560fe"><span class="section-number-3">4.1</span> Some basic commands related to processes</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <code>top</code> Displays linux processes<br />
@@ -516,8 +522,8 @@ sudo dpkg -i /path/to/file.deb
 </div>
 </div>
 
-<div id="outline-container-orgf0440e1" class="outline-3">
-<h3 id="orgf0440e1"><span class="section-number-3">4.2</span> Services</h3>
+<div id="outline-container-org89199ed" class="outline-3">
+<h3 id="org89199ed"><span class="section-number-3">4.2</span> Services</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
  Services are a certain kind of process that runs in the background<br />
@@ -527,8 +533,8 @@ sudo dpkg -i /path/to/file.deb
 </div>
 </div>
 
-<div id="outline-container-org592b9dd" class="outline-2">
-<h2 id="org592b9dd"><span class="section-number-2">5</span> Disk usage</h2>
+<div id="outline-container-org561bcf0" class="outline-2">
+<h2 id="org561bcf0"><span class="section-number-2">5</span> Disk usage</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <code>du</code> is the command used to find disk usage. Common usages:<br />
@@ -540,8 +546,8 @@ sudo dpkg -i /path/to/file.deb
 </div>
 </div>
 
-<div id="outline-container-org90fb513" class="outline-2">
-<h2 id="org90fb513"><span class="section-number-2">6</span> Scheduling tasks</h2>
+<div id="outline-container-orga761121" class="outline-2">
+<h2 id="orga761121"><span class="section-number-2">6</span> Scheduling tasks</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Run <code>crontab -e</code> to configure cron jobs<br />
@@ -554,8 +560,8 @@ Check out <a href="https://crontab.guru/">https://crontab.guru/</a> to get a vis
 </div>
 </div>
 
-<div id="outline-container-orgedc73e6" class="outline-2">
-<h2 id="orgedc73e6"><span class="section-number-2">7</span> Readline tips</h2>
+<div id="outline-container-org87f223b" class="outline-2">
+<h2 id="org87f223b"><span class="section-number-2">7</span> Readline tips</h2>
 <div class="outline-text-2" id="text-7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -626,8 +632,8 @@ Check out <a href="https://crontab.guru/">https://crontab.guru/</a> to get a vis
 </div>
 </div>
 
-<div id="outline-container-orgd479e8b" class="outline-2">
-<h2 id="orgd479e8b"><span class="section-number-2">8</span> Misc</h2>
+<div id="outline-container-org763c975" class="outline-2">
+<h2 id="org763c975"><span class="section-number-2">8</span> Misc</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 <code>su &lt;user&gt;</code> switches user<br />
@@ -641,12 +647,12 @@ Check out <a href="https://crontab.guru/">https://crontab.guru/</a> to get a vis
 </div>
 </div>
 
-<div id="outline-container-orgecc12bc" class="outline-2">
-<h2 id="orgecc12bc"><span class="section-number-2">9</span> Elementary OS specific notes (v5.1)</h2>
+<div id="outline-container-org61f7528" class="outline-2">
+<h2 id="org61f7528"><span class="section-number-2">9</span> Elementary OS specific notes (v5.1)</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-orgf57d5ac" class="outline-3">
-<h3 id="orgf57d5ac"><span class="section-number-3">9.1</span> Dark theme and additional UI tweaks</h3>
+<div id="outline-container-org90d99fa" class="outline-3">
+<h3 id="org90d99fa"><span class="section-number-3">9.1</span> Dark theme and additional UI tweaks</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 Instructions copied from here: <a href="https://github.com/elementary-tweaks/elementary-tweaks">https://github.com/elementary-tweaks/elementary-tweaks</a>. You might get an 'add-apt-repository command not found' error. In that case, run:<br />
@@ -668,11 +674,12 @@ You can now access the Tweaks tool under system settings. Note: You'll probably 
 </div>
 </div>
 
-<div id="outline-container-org0333a62" class="outline-3">
-<h3 id="org0333a62"><span class="section-number-3">9.2</span> Misc bugs or inconveniences</h3>
+<div id="outline-container-org8e2362a" class="outline-3">
+<h3 id="org8e2362a"><span class="section-number-3">9.2</span> Misc bugs or inconveniences</h3>
 <div class="outline-text-3" id="text-9-2">
 <ul class="org-ul">
 <li>Right click issue on Firefox wherein the context menu gets activated on button press instead of button release. Go to <code>about:config</code> in Firefox and set <code>ui.context_menus.after_mouseup</code> to true<br /></li>
+<li>When updating applications or packages from app center, it might not get past the "Waiting for package manager lock". Running <code>sudo dpkg --configure -a</code> should fix it.<br /></li>
 </ul>
 </div>
 </div>
@@ -680,7 +687,7 @@ You can now access the Tweaks tool under system settings. Note: You'll probably 
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: devn</p>
-<p class="date">Created: 2020-01-22 Wed 00:07</p>
+<p class="date">Created: 2020-01-25 Sat 19:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
