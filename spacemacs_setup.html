@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-25 Sat 19:04 -->
+<!-- 2020-02-20 Thu 00:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Spacemacs setup</title>
@@ -204,7 +204,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -253,19 +253,20 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0c55d13">1. Spacemacs installation</a>
+<li><a href="#orgd66ae07">1. Spacemacs installation</a>
 <ul>
-<li><a href="#org839b106">1.1. Ubuntu/Elementary OS setup</a></li>
+<li><a href="#orgebebced">1.1. Ubuntu/Elementary OS setup</a></li>
 </ul>
 </li>
-<li><a href="#orgfafb967">2. Spacemacs configuration</a></li>
-<li><a href="#org192f3d3">3. Spacemacs themes</a></li>
-<li><a href="#orgbb9b3d0">4. LSP setup</a></li>
+<li><a href="#orgad44c55">2. Spacemacs configuration</a></li>
+<li><a href="#orgbeb3698">3. Spacemacs themes</a></li>
+<li><a href="#org77b63d8">4. LSP setup</a></li>
+<li><a href="#org4a8eb9c">5. Useful external tools</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0c55d13" class="outline-2">
-<h2 id="org0c55d13"><span class="section-number-2">1</span> Spacemacs installation</h2>
+<div id="outline-container-orgd66ae07" class="outline-2">
+<h2 id="orgd66ae07"><span class="section-number-2">1</span> Spacemacs installation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Install emacs on your platform (<code>apt</code> on Ubuntu or the distro's app store, <code>brew</code> on MacOS (update: better to install from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a> since you'll get proper GUI support), download .exe from <a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a> for Windows). Install 32-bit version (at least if you are on Windows) as that seems to have better performance compared to the 64-bit version. I downloaded <code>emacs-26.3-i686.zip</code> for my Windows machine<br />
@@ -294,8 +295,8 @@ Run emacs now. On Windows, use the runemacs.exe instead of emacs.exe as the form
 </p>
 </div>
 
-<div id="outline-container-org839b106" class="outline-3">
-<h3 id="org839b106"><span class="section-number-3">1.1</span> Ubuntu/Elementary OS setup</h3>
+<div id="outline-container-orgebebced" class="outline-3">
+<h3 id="orgebebced"><span class="section-number-3">1.1</span> Ubuntu/Elementary OS setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Install Emacs from the app store. 25.2 was the available version at the time of writing. If you try running it, it'll most probably crash. If it doesn't, you probably don't need to do the next step.<br />
@@ -313,8 +314,8 @@ Org brain package wasn't getting installed for me for some reason. Since I don't
 </div>
 </div>
 
-<div id="outline-container-orgfafb967" class="outline-2">
-<h2 id="orgfafb967"><span class="section-number-2">2</span> Spacemacs configuration</h2>
+<div id="outline-container-orgad44c55" class="outline-2">
+<h2 id="orgad44c55"><span class="section-number-2">2</span> Spacemacs configuration</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Open ~/.spacemacs file and give it a read. It's very well documented, and was somewhat easy to get a basic understanding of the settings within.<br />
@@ -350,31 +351,49 @@ Here's a brief explanation of the settings above:<br />
 </div>
 </div>
 
-<div id="outline-container-org192f3d3" class="outline-2">
-<h2 id="org192f3d3"><span class="section-number-2">3</span> Spacemacs themes</h2>
+<div id="outline-container-orgbeb3698" class="outline-2">
+<h2 id="orgbeb3698"><span class="section-number-2">3</span> Spacemacs themes</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-Setting a new theme in spacemacs is really simple. Visit <a href="https://themegallery.robdor.com/">https://themegallery.robdor.com/</a> and choose a theme that you like. Then add the theme to <code>dotspacemacs-themes</code> or replace an existing one. Here's what mine looks like: <code>dotspacemacs-themes '(jbeans spacemacs-dark)</code>. The themes can be cycled through by using <code>SPC T n</code><br />
+Setting a new theme in spacemacs is really simple. Visit <a href="https://themegallery.robdor.com/">https://themegallery.robdor.com/</a> and choose a theme that you like. Then add the theme to <code>dotspacemacs-themes</code> or replace an existing one. Here's what mine looks like: <code>dotspacemacs-themes '(ujelly spacemacs-dark)</code>. The themes can be cycled through by using <code>SPC T n</code><br />
 There's a layer called <code>themes-megapack</code>, but I would caution against using that as it seemed to mess with my .spacemacs configuration by adding a bunch of things under <code>custom-set-variables</code>, but I couldn't figure out what exactly and ended up resetting my .spacemacs file.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbb9b3d0" class="outline-2">
-<h2 id="orgbb9b3d0"><span class="section-number-2">4</span> LSP setup</h2>
+<div id="outline-container-org77b63d8" class="outline-2">
+<h2 id="org77b63d8"><span class="section-number-2">4</span> LSP setup</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Check the <a href="https://github.com/emacs-lsp/lsp-mode">https://github.com/emacs-lsp/lsp-mode</a> link for various LSP servers. For javascript/typescript, the LSP server requires node to run. If you use nvm to manage your node instances, chances are that the node executable won't be found. You can verify this by running <code>eshell</code> command and typing <code>node</code>. If it says "Command not found", then your LSP server won't run. This happens because nvm alters the $PATH variable when running .bashrc, which isn't run when launching <code>eshell</code>. Altering the <code>exec-path</code> variable to add path to node binary didn't help me in this case. I found it easiest to create a symlink to node under /usr/local/bin<br />
+Check the <a href="https://github.com/emacs-lsp/lsp-mode">https://github.com/emacs-lsp/lsp-mode</a> link for various LSP servers. For javascript/typescript, the LSP server requires node to run. If you use nvm to manage your node instances, chances are that the node executable won't be found. You can verify this by running <code>eshell</code> command and typing <code>node</code>. If it says "Command not found", then your LSP server won't run. This happens because nvm alters the $PATH variable when running .bashrc, which isn't run when launching <code>eshell</code>. Altering the <code>exec-path</code> variable to add path to node binary didn't help me in this case. I found it easiest to create a symlink to node under <code>/usr/local/bin</code>. Any globally installed node package that you expect to use from within emacs will need a symlink under <code>/usr/local/bin</code>.<br />
 </p>
 <pre class="example">
 sudo ln -s ~/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/node
 </pre>
 </div>
 </div>
+<div id="outline-container-org4a8eb9c" class="outline-2">
+<h2 id="org4a8eb9c"><span class="section-number-2">5</span> Useful external tools</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Install the following external tools when setting up a new system:<br />
+</p>
+<ul class="org-ul">
+<li>git<br /></li>
+<li>nvm and node (create symlink to node under /usr/local/bin)<br /></li>
+<li>ripgrep<br /></li>
+<li>broot<br /></li>
+<li>fzf<br /></li>
+<li>diff so fancy<br /></li>
+<li>rupa/z<br /></li>
+<li>fd<br /></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: devn</p>
-<p class="date">Created: 2020-01-25 Sat 19:04</p>
+<p class="date">Created: 2020-02-20 Thu 00:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
